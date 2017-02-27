@@ -29,7 +29,7 @@ written permission of Adobe.
 	 * 2. track the location of the user after they arrive
 	 */
 	[ADBMobile trackState:@"Tip Driver" data:nil];
-	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2016"}];
+	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
 	
 	
 	// update the labels in our UI

@@ -1,7 +1,7 @@
 /*************************************************************************
  
 ADOBE SYSTEMS INCORPORATED
-Copyright 2016 Adobe Systems Incorporated
+Copyright 2017 Adobe Systems Incorporated
 All Rights Reserved.
  
 NOTICE:  Adobe permits you to use, modify, and distribute this file in accordance with the
@@ -32,7 +32,7 @@ written permission of Adobe.
 	 * 2. collect lifecycle data with additional data reporting the year
 	 */
 	[ADBMobile setDebugLogging:YES];
-	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2016"}];
+	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
 	
 	// initialize our fake data for the app
     [self loadDestinations];
