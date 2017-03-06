@@ -39,6 +39,7 @@
 		F0AA2F461C8770E200543B4E /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F451C8770E200543B4E /* loginBackground.png */; };
 		F0AA2F481C878BE500543B4E /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F471C878BE500543B4E /* check.png */; };
 		F0AA2F4A1C8793A500543B4E /* segway.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F491C8793A500543B4E /* segway.png */; };
+		F0BA08C91E6E2D2700F6E245 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA08C71E68E36600F6E245 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BA08C91E6E2D2700F6E245 /* iAd.framework in Frameworks */,
 				F0AA2F441C87599C00543B4E /* CoreLocation.framework in Frameworks */,
 				F0185C091C79194E0075D75B /* libsqlite3.0.tbd in Frameworks */,
 				F0185C071C7919460075D75B /* SystemConfiguration.framework in Frameworks */,
