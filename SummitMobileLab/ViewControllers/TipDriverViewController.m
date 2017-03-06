@@ -31,7 +31,7 @@ written permission of Adobe.
 	 */
 	NSDictionary *contextData = @{
 		@"trip.destination":_user.trip.destination.name,
-		@"acquisitionCampaign":[[AppDelegate acquisitionData] objectForKey:@"a.referrer.campaign.name"]
+		@"acquisitionCampaign":[[AppDelegate acquisitionData] objectForKey:@"a.referrer.campaign.name"] ?: @""
 	};
 	[ADBMobile trackState:@"Tip Driver" data:contextData];
 	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
