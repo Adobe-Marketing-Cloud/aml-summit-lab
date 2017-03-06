@@ -23,4 +23,6 @@ written permission of Adobe.
 @property (assign) IBOutlet UILabel *lblTravelDistance;
 @property (assign) IBOutlet UILabel *lblHeading;
 
+@property (assign) IBOutlet UIButton *btnBack;
+
 @end

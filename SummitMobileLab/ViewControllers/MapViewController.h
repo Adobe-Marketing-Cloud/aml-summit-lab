@@ -21,10 +21,11 @@ written permission of Adobe.
 
 @property (assign) IBOutlet UILabel *lblDestination;
 
-@property (assign) IBOutlet UIButton *btnLab329;
-@property (assign) IBOutlet UIButton *btnLab330;
+@property (assign) IBOutlet UIButton *btnLab3882;
+@property (assign) IBOutlet UIButton *btnLab3881;
 @property (assign) IBOutlet UIButton *btnRestrooms;
 @property (assign) IBOutlet UIButton *btnCasino;
 @property (assign) IBOutlet UIButton *btnBar;
+@property (assign) IBOutlet UIButton *btnSecretLounge;
 
 @end

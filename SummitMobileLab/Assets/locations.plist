@@ -4,6 +4,31 @@
 <array>
 	<dict>
 		<key>mapX</key>
+		<integer>40</integer>
+		<key>mapY</key>
+		<integer>489</integer>
+		<key>lon</key>
+		<real>66.66</real>
+		<key>lat</key>
+		<real>66.66</real>
+		<key>locations</key>
+		<dict>
+			<key>Lab 3881</key>
+			<string>0</string>
+			<key>Lab 3882</key>
+			<string>0</string>
+			<key>Restrooms</key>
+			<string>0</string>
+			<key>Casino</key>
+			<string>0</string>
+			<key>Bar</key>
+			<string>0</string>
+		</dict>
+		<key>name</key>
+		<string>Secret Lounge</string>
+	</dict>
+	<dict>
+		<key>mapX</key>
 		<integer>248</integer>
 		<key>mapY</key>
 		<integer>44</integer>
@@ -13,7 +38,9 @@
 		<real>22.22</real>
 		<key>locations</key>
 		<dict>
-			<key>Lab 329</key>
+			<key>Secret Lounge</key>
+			<string>0</string>
+			<key>Lab 3882</key>
 			<string>10</string>
 			<key>Restrooms</key>
 			<string>15</string>
@@ -23,7 +50,7 @@
 			<string>90</string>
 		</dict>
 		<key>name</key>
-		<string>Lab 330</string>
+		<string>Lab 3881</string>
 	</dict>
 	<dict>
 		<key>mapX</key>
@@ -36,13 +63,15 @@
 		<real>55.55</real>
 		<key>locations</key>
 		<dict>
-			<key>Lab 330</key>
+			<key>Secret Lounge</key>
+			<string>0</string>
+			<key>Lab 3881</key>
 			<string>90</string>
 			<key>Restrooms</key>
 			<string>75</string>
 			<key>Casino</key>
 			<string>50</string>
-			<key>Lab 329</key>
+			<key>Lab 3882</key>
 			<string>100</string>
 		</dict>
 		<key>name</key>
@@ -59,13 +88,15 @@
 		<real>44.44</real>
 		<key>locations</key>
 		<dict>
-			<key>Lab 330</key>
+			<key>Secret Lounge</key>
+			<string>0</string>
+			<key>Lab 3881</key>
 			<string>40</string>
 			<key>Restrooms</key>
 			<string>25</string>
 			<key>Bar</key>
 			<string>50</string>
-			<key>Lab 329</key>
+			<key>Lab 3882</key>
 			<string>50</string>
 		</dict>
 		<key>name</key>
@@ -82,13 +113,15 @@
 		<real>33.33</real>
 		<key>locations</key>
 		<dict>
-			<key>Lab 330</key>
+			<key>Secret Lounge</key>
+			<string>0</string>
+			<key>Lab 3881</key>
 			<string>15</string>
 			<key>Bar</key>
 			<string>75</string>
 			<key>Casino</key>
 			<string>25</string>
-			<key>Lab 329</key>
+			<key>Lab 3882</key>
 			<string>25</string>
 		</dict>
 		<key>name</key>
@@ -105,7 +138,9 @@
 		<real>11.11</real>
 		<key>locations</key>
 		<dict>
-			<key>Lab 330</key>
+			<key>Secret Lounge</key>
+			<string>0</string>
+			<key>Lab 3881</key>
 			<string>10</string>
 			<key>Restrooms</key>
 			<string>25</string>
@@ -115,7 +150,7 @@
 			<string>100</string>
 		</dict>
 		<key>name</key>
-		<string>Lab 329</string>
+		<string>Lab 3882</string>
 	</dict>
 </array>
 </plist>

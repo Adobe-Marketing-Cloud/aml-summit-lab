@@ -19,6 +19,7 @@ written permission of Adobe.
 #import "Destination.h"
 #import "TransportationMode.h"
 #import "TransportationModeView.h"
+#import "MapViewController.h"
 #import "ADBMobile.h"
 
 @implementation TransportationModeViewController
@@ -69,6 +70,14 @@ written permission of Adobe.
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"modeToMapSegue"]) {
+		_user.trip.destination = nil;
+		MapViewController *mapVC = [segue destinationViewController];
+		mapVC.user = _user;
+		
+		return;
+	}
+	
     UIButton *button = (UIButton *)sender;
     NSString *selectedTransportationMode = button.titleLabel.text;
     

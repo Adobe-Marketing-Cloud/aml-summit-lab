@@ -19,6 +19,7 @@ written permission of Adobe.
 @interface AppDelegate()
 @property (strong, nonatomic) NSMutableDictionary *destinations;
 @property (strong, nonatomic) NSMutableDictionary *transportationModes;
+@property (strong, nonatomic) NSDictionary *acquisitionData;
 @property (nonatomic) BOOL hasSpecialOffer;
 @end
 
@@ -34,6 +35,15 @@ written permission of Adobe.
 	[ADBMobile setDebugLogging:YES];
 	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
 	
+	/*
+		Register for the Adobe Data Callback
+	 */
+	[ADBMobile registerAdobeDataCallback:^(ADBMobileDataEvent event, NSDictionary * _Nullable adobeData) {
+		if (event == ADBMobileDataEventAcquisitionLaunch) {
+			_acquisitionData = adobeData;
+		}
+	}];
+	
 	// initialize our fake data for the app
     [self loadDestinations];
     [self loadTransportationModes];
@@ -48,9 +58,8 @@ written permission of Adobe.
 		 *
 		 * 1. track the deep link used as an entry point to the app
 		 */
-        // [ADBMobile trackAdobeLink:url];
-		
-		
+        [ADBMobile trackAdobeDeepLink:url];
+				
         _hasSpecialOffer = YES;
         return YES;
     }
@@ -116,6 +125,11 @@ written permission of Adobe.
 + (BOOL) hasSpecialOffer {
 	AppDelegate *sharedDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 	return sharedDelegate.hasSpecialOffer;
+}
+
++ (NSDictionary *) acquisitionData {
+	AppDelegate *sharedDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+	return sharedDelegate.acquisitionData;
 }
 
 #pragma mark - Initialization methods

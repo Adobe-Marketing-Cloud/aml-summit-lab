@@ -18,6 +18,7 @@ written permission of Adobe.
 #import "Destination.h"
 #import "TransportationMode.h"
 #import "ADBMobile.h"
+#import "AppDelegate.h"
 
 @implementation TipDriverViewController
 
@@ -28,7 +29,11 @@ written permission of Adobe.
 	 * 1. track the user viewing this page
 	 * 2. track the location of the user after they arrive
 	 */
-	[ADBMobile trackState:@"Tip Driver" data:nil];
+	NSDictionary *contextData = @{
+		@"trip.destination":_user.trip.destination.name,
+		@"acquisitionCampaign":[[AppDelegate acquisitionData] objectForKey:@"a.referrer.campaign.name"]
+	};
+	[ADBMobile trackState:@"Tip Driver" data:contextData];
 	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
 	
 	

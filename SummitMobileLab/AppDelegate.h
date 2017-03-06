@@ -20,6 +20,7 @@ written permission of Adobe.
 + (NSDictionary *) destinations;
 + (NSDictionary *) transportationModes;
 + (BOOL) hasSpecialOffer;
++ (NSDictionary *) acquisitionData;
 
 @end
 

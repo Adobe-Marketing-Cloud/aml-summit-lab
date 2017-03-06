@@ -39,6 +39,7 @@
 		F0AA2F461C8770E200543B4E /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F451C8770E200543B4E /* loginBackground.png */; };
 		F0AA2F481C878BE500543B4E /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F471C878BE500543B4E /* check.png */; };
 		F0AA2F4A1C8793A500543B4E /* segway.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F491C8793A500543B4E /* segway.png */; };
+		F0BA08C81E68E36600F6E245 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA08C71E68E36600F6E245 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		F0AA2F451C8770E200543B4E /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBackground.png; path = Assets/loginBackground.png; sourceTree = "<group>"; };
 		F0AA2F471C878BE500543B4E /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = check.png; path = Assets/check.png; sourceTree = "<group>"; };
 		F0AA2F491C8793A500543B4E /* segway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = segway.png; path = Assets/segway.png; sourceTree = "<group>"; };
+		F0BA08C71E68E36600F6E245 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0BA08C81E68E36600F6E245 /* iAd.framework in Frameworks */,
 				F0AA2F441C87599C00543B4E /* CoreLocation.framework in Frameworks */,
 				F0185C091C79194E0075D75B /* libsqlite3.0.tbd in Frameworks */,
 				F0185C071C7919460075D75B /* SystemConfiguration.framework in Frameworks */,
@@ -123,6 +126,7 @@
 		F0185C0A1C791B4B0075D75B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F0BA08C71E68E36600F6E245 /* iAd.framework */,
 				F0185C061C7919460075D75B /* SystemConfiguration.framework */,
 				F0AA2F431C87599C00543B4E /* CoreLocation.framework */,
 				F0185C081C79194E0075D75B /* libsqlite3.0.tbd */,

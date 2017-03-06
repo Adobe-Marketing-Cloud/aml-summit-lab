@@ -18,7 +18,7 @@ written permission of Adobe.
 #import "Trip.h"
 #import "ADBMobile.h"
 
-static NSString *const SummitInitialLocationName	= @"Lab 329";
+static NSString *const SummitInitialLocationName	= @"Lab 3882";
 
 @implementation ProfileViewController
 
@@ -58,7 +58,7 @@ static NSString *const SummitInitialLocationName	= @"Lab 329";
 	MapViewController *mapVC = [segue destinationViewController];
 	mapVC.user = user;
 	
-	// initialize the trip starting with location of Lab 329
+	// initialize the trip starting with location of Lab 3882
 	Trip *trip = [[Trip alloc] init];
 	trip.currentLocation = [AppDelegate destinations][SummitInitialLocationName];
 	mapVC.user.trip = trip;
