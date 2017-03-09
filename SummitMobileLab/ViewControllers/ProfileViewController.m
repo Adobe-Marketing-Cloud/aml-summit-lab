@@ -61,6 +61,12 @@ static NSString *const SummitInitialLocationName	= @"Lab 3882";
 	// initialize the trip starting with location of Lab 3882
 	Trip *trip = [[Trip alloc] init];
 	trip.currentLocation = [AppDelegate destinations][SummitInitialLocationName];
+	
+	// if this is from our deeplink, set the destination to the secret lounge
+	if ([sender respondsToSelector:@selector(isEqualToString:)] && [sender isEqualToString:@"deeplink"]) {
+		trip.destination = [AppDelegate destinations][@"Secret Lounge"];
+	}
+	
 	mapVC.user.trip = trip;
 }
 

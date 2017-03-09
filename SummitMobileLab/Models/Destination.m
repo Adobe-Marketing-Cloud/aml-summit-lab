@@ -15,10 +15,11 @@ written permission of Adobe.
 
 @implementation Destination
 
-+ (instancetype) destinationWithName:(NSString *)newName destinations:(NSDictionary *)newDestinations lat:(float)newLat lon:(float)newLon mapX:(float)mapX mapY:(float)mapY {
++ (instancetype) destinationWithName:(NSString *)newName travelText:(NSString *)newTravelText destinations:(NSDictionary *)newDestinations lat:(float)newLat lon:(float)newLon mapX:(float)mapX mapY:(float)mapY {
     Destination *destination = [[Destination alloc] init];
     
     destination.name = newName;
+	destination.travelText = newTravelText;
     destination.location = [[CLLocation alloc] initWithLatitude:newLat longitude:newLon];
     
     destination.otherDestinations = newDestinations;

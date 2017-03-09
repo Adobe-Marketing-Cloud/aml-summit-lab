@@ -18,10 +18,11 @@ written permission of Adobe.
 @interface Destination : NSObject
 
 @property (strong) NSString *name;
+@property (strong) NSString *travelText;
 @property (strong) CLLocation *location;
 @property (strong) NSDictionary *otherDestinations;
 @property (nonatomic) CGPoint mapCoords;
 
-+ (instancetype) destinationWithName:(NSString *)newName destinations:(NSDictionary *)newDestinations lat:(float)newLat lon:(float)newLon mapX:(float)mapX mapY:(float)mapY;
++ (instancetype) destinationWithName:(NSString *)newName travelText:(NSString *)newTravelText destinations:(NSDictionary *)newDestinations lat:(float)newLat lon:(float)newLon mapX:(float)mapX mapY:(float)mapY;
 
 @end

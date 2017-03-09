@@ -61,34 +61,37 @@ written permission of Adobe.
     
     if (button == _btnLab3882) {
         _user.trip.destination = [AppDelegate destinations][@"Lab 3882"];
-        _lblDestination.text = @"Take me to Lab 3882";
     }
     else if (button == _btnLab3881) {
         _user.trip.destination = [AppDelegate destinations][@"Lab 3881"];
-        _lblDestination.text = @"Take me to Lab 3881";
     }
     else if (button == _btnRestrooms) {
         _user.trip.destination = [AppDelegate destinations][@"Restrooms"];
-        _lblDestination.text = @"Take me to the restrooms";
     }
     else if (button == _btnCasino) {
         _user.trip.destination = [AppDelegate destinations][@"Casino"];
-        _lblDestination.text = @"Take me to the casino";
     }
     else if (button == _btnBar) {
         _user.trip.destination = [AppDelegate destinations][@"Bar"];
-        _lblDestination.text = @"Take me to the bar";
     }
 	else if (button == _btnSecretLounge) {
 		_user.trip.destination = [AppDelegate destinations][@"Secret Lounge"];
-		_lblDestination.text = @"Take me to the Secret Lounge";
+	}
+	
+	[self updateDestinationLabelWithExistingDestination];
+}
+
+- (void) updateDestinationLabelWithExistingDestination {
+	if (_user.trip.destination) {
+		_lblDestination.text = _user.trip.destination.travelText;
 	}
 }
 
-// snippet
 - (void) checkForSecretOffer:(NSNotification *)notification {
 	// only show secret lounge if they opened from a deeplink
 	[_btnSecretLounge setHidden:![AppDelegate hasSpecialOffer]];
+	
+	[self updateDestinationLabelWithExistingDestination];
 }
 
 #pragma mark - Navigation methods

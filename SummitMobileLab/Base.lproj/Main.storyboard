@@ -99,7 +99,7 @@ before beginning your trip!</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <segue destination="HOQ-Bb-MJu" kind="show" id="xMi-2J-yZG"/>
+                                            <segue destination="HOQ-Bb-MJu" kind="show" identifier="loginToMap" id="xMi-2J-yZG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -194,7 +194,7 @@ before beginning your trip!</string>
         <!--Map View Controller-->
         <scene sceneID="8lq-tr-Lav">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="HOQ-Bb-MJu" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" modalTransitionStyle="crossDissolve" id="HOQ-Bb-MJu" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZV4-E6-oWN"/>
                         <viewControllerLayoutGuide type="bottom" id="uRq-is-XJy"/>
@@ -731,6 +731,6 @@ before beginning your trip!</string>
         <image name="mapPin.png" width="100" height="83"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5bV-za-epU"/>
+        <segue reference="xMi-2J-yZG"/>
     </inferredMetricsTieBreakers>
 </document>

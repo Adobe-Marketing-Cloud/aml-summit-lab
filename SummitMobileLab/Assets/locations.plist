@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>travelText</key>
+		<string>Take me to the Secret Lounge</string>
 		<key>mapX</key>
 		<integer>40</integer>
 		<key>mapY</key>
@@ -28,6 +30,8 @@
 		<string>Secret Lounge</string>
 	</dict>
 	<dict>
+		<key>travelText</key>
+		<string>Take me to Lab 3881</string>
 		<key>mapX</key>
 		<integer>248</integer>
 		<key>mapY</key>
@@ -53,6 +57,8 @@
 		<string>Lab 3881</string>
 	</dict>
 	<dict>
+		<key>travelText</key>
+		<string>Take me to the Bar</string>
 		<key>mapX</key>
 		<integer>40</integer>
 		<key>mapY</key>
@@ -78,6 +84,8 @@
 		<string>Bar</string>
 	</dict>
 	<dict>
+		<key>travelText</key>
+		<string>Take me to the Casino</string>
 		<key>mapX</key>
 		<integer>288</integer>
 		<key>mapY</key>
@@ -103,6 +111,8 @@
 		<string>Casino</string>
 	</dict>
 	<dict>
+		<key>travelText</key>
+		<string>Take me to the restroom</string>
 		<key>mapX</key>
 		<integer>40</integer>
 		<key>mapY</key>
@@ -128,6 +138,8 @@
 		<string>Restrooms</string>
 	</dict>
 	<dict>
+		<key>travelText</key>
+		<string>Take me to Lab 3882</string>
 		<key>mapX</key>
 		<integer>288</integer>
 		<key>mapY</key>

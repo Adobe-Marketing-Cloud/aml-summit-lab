@@ -15,6 +15,10 @@ written permission of Adobe.
 #import "TransportationMode.h"
 #import "Destination.h"
 #import "ADBMobile.h"
+#import "User.h"
+#import "Trip.h"
+#import "MapViewController.h"
+#import "ProfileViewController.h"
 
 @interface AppDelegate()
 @property (strong, nonatomic) NSMutableDictionary *destinations;
@@ -61,6 +65,9 @@ written permission of Adobe.
         [ADBMobile trackAdobeDeepLink:url];
 				
         _hasSpecialOffer = YES;
+		
+		[(ProfileViewController *)self.window.rootViewController performSegueWithIdentifier:@"loginToMap" sender:@"deeplink"];
+		
         return YES;
     }
     
@@ -140,6 +147,7 @@ written permission of Adobe.
     
     for (NSDictionary *d in [NSArray arrayWithContentsOfFile:destinationsFile]) {
         NSString *name = d[@"name"];
+		NSString *travelText = d[@"travelText"];
         NSDictionary *locations = d[@"locations"];
         NSNumber *lat = d[@"lat"];
         NSNumber *lon = d[@"lon"];
@@ -151,7 +159,9 @@ written permission of Adobe.
             [tempDestinations setObject:locations[locationName] forKey:locationName];
         }
         
-        [_destinations setObject:[Destination destinationWithName:name destinations:tempDestinations
+        [_destinations setObject:[Destination destinationWithName:name
+													   travelText:travelText
+													 destinations:tempDestinations
 															  lat:[lat floatValue] lon:[lon floatValue]
 															 mapX:[mapX floatValue] mapY:[mapY floatValue]] forKey:name];
     }
