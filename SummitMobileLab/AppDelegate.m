@@ -46,6 +46,9 @@ written permission of Adobe.
 		if (event == ADBMobileDataEventAcquisitionLaunch) {
 			_acquisitionData = adobeData;
 		}
+		else if (event == ADBMobileDataEventDeepLink) {
+			[self application:application openURL:adobeData[ADBConfigKeyCallbackDeepLink] options:launchOptions];
+		}
 	}];
 	
 	// initialize our fake data for the app
