@@ -11,6 +11,7 @@ written permission of Adobe.
  
 **************************************************************************/
 
+#import <AdSupport/ASIdentifierManager.h>
 #import "AppDelegate.h"
 #import "TransportationMode.h"
 #import "Destination.h"
@@ -38,6 +39,10 @@ written permission of Adobe.
 	 */
 	[ADBMobile setDebugLogging:YES];
 	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
+	
+	// get IDFA from Apple and pass it to Adobe SDK
+	NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+	[ADBMobile setAdvertisingIdentifier:idfaString];
 	
 	/*
 		Register for the Adobe Data Callback

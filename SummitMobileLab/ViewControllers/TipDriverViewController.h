@@ -22,5 +22,6 @@ written permission of Adobe.
 @property (assign) IBOutlet UILabel *lblCost;
 @property (assign) IBOutlet UILabel *lblTripCompletion;
 @property (assign) IBOutlet UISegmentedControl *segmentTip;
+@property (assign) IBOutlet UIButton *btnBeardcons;
 
 @end

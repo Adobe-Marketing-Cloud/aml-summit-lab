@@ -61,6 +61,7 @@ written permission of Adobe.
 	_lblCost.text = [NSString stringWithFormat:@"$%.2f", [_user.trip.distance floatValue] * [_user.trip.tranportationMode.costPerUnitTraveled floatValue]];
 	_lblTripCompletion.text = [NSString stringWithFormat:@"Thank you for choosing us for your travel needs, %@.  Services will be charged to your credit card (%@).  Would you like to tip your driver?",
 							   _user.name, _user.creditCard];
+	_btnBeardcons.hidden = ![_user.trip.destination.name isEqualToString:@"Casino"];
 }
 
 - (void) setupTipControl {
@@ -99,6 +100,12 @@ written permission of Adobe.
 	tripData[@"trip.tipAmount"] = [_segmentTip titleForSegmentAtIndex:_segmentTip.selectedSegmentIndex];
 	
 	[ADBMobile trackAction:@"Trip Complete" data:tripData];
+}
+
+- (IBAction) linkToBeardcons:(id)sender {
+	[ADBMobile acquisitionCampaignStartForApp:@"799752ef587558a90ba136ab1766b226f0fd535a35124c3def885dc560ab931e" data:nil];
+
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/au/app/bea-rd-cons/id835196493?mt=8&uo=4"] options:@{} completionHandler:nil];
 }
 
 @end
