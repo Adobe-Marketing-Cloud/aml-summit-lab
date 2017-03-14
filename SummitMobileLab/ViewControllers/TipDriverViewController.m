@@ -105,7 +105,9 @@ written permission of Adobe.
 - (IBAction) linkToBeardcons:(id)sender {
 	[ADBMobile acquisitionCampaignStartForApp:@"799752ef587558a90ba136ab1766b226f0fd535a35124c3def885dc560ab931e" data:nil];
 
-	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/au/app/bea-rd-cons/id835196493?mt=8&uo=4"] options:@{} completionHandler:nil];
+	[[UIApplication sharedApplication]
+	 openURL:[NSURL URLWithString:@"https://itunes.apple.com/au/app/bea-rd-cons/id835196493?mt=8&uo=4"]
+	 options:@{} completionHandler:nil];
 }
 
 @end
