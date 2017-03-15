@@ -14,7 +14,14 @@ written permission of Adobe.
 #import "AppDelegate.h"
 #import "TransportationMode.h"
 #import "Destination.h"
+#import "ProfileViewController.h"
 #import "ADBMobile.h"
+
+#define RED_COLOR  [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 1.0]
+#define BLUE_COLOR  [UIColor colorWithRed: 0 green: 0 blue: 1 alpha: 1.0]
+#define GREEN_COLOR  [UIColor colorWithRed: 0 green: 1 blue: 0 alpha: 1.0]
+#define YELLOW_COLOR  [UIColor colorWithRed: 1 green: 1 blue: 0 alpha: 1.0]
+#define TEXT_COLOR_NAMES @{@"blue":BLUE_COLOR, @"green":GREEN_COLOR, @"red": RED_COLOR, @"yellow": YELLOW_COLOR};
 
 @interface AppDelegate()
 @property (strong, nonatomic) NSMutableDictionary *destinations;
@@ -26,17 +33,29 @@ written permission of Adobe.
 
 #pragma mark - UIApplicationDelegate methods
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	/* Adobe Analytics
+	
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    }
+    [application registerForRemoteNotifications];
+    
+    /* Adobe Analytics
 	 *
 	 * 1. turn debug logging on so we can see activity in the Xcode console
 	 * 2. collect lifecycle data with additional data reporting the year
 	 */
+    
 	[ADBMobile setDebugLogging:YES];
 	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
+    NSDictionary *contextData = @{@"testName":@"Summit Lab 2017", @"testMessage":@"AMS postbacks are sweet!"};
+    [ADBMobile trackAction:@"demo-postbacks" data:contextData];
 	
 	// initialize our fake data for the app
     [self loadDestinations];
-    [self loadTransportationModes];
+    [self loadTransportationModes];    
     
     return YES;
 }
@@ -63,7 +82,7 @@ written permission of Adobe.
 	/* Adobe Analytics
 	 *
 	 * 1. pass the push token for this device to the Adobe SDK
-	 */
+	 */    
 	[ADBMobile setPushIdentifier:deviceToken];
 }
 
@@ -85,6 +104,7 @@ written permission of Adobe.
 		 * 1. when the user opens your app by clicking through your push message, report it to the Adobe SDK
 		 */
 		[ADBMobile trackPushMessageClickThrough:userInfo];
+        [self customizeUsingPushData:userInfo];
 	}
 }
 
@@ -98,8 +118,27 @@ written permission of Adobe.
 		 * 1. when the user opens your app by clicking through your push message, report it to the Adobe SDK
 		 */
 		[ADBMobile trackPushMessageClickThrough:userInfo];
+        [self customizeUsingPushData:userInfo];
 	}
 	completionHandler(UIBackgroundFetchResultNoData);
+}
+
+- (void)customizeUsingPushData:(NSDictionary *)data{
+    NSString *customColorString = [data objectForKey:@"color"];
+    
+    if (customColorString != nil && customColorString.length > 0){
+        UIViewController *mainViewController = self.window.rootViewController;
+        if ([mainViewController isKindOfClass:[ProfileViewController class]]){
+            ProfileViewController *profileViewController = (ProfileViewController *)mainViewController;
+            
+            NSDictionary *allColors = TEXT_COLOR_NAMES;
+            UIColor *customColor = allColors[customColorString];
+            if (customColor != nil){
+                profileViewController.txtName.textColor = customColor;
+                profileViewController.txtCreditCard.textColor = customColor;
+            }
+        }
+    }
 }
 
 #pragma mark - Class methods
