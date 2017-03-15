@@ -280,7 +280,7 @@ before beginning your trip!</string>
                                     <action selector="setDestination:" destination="HOQ-Bb-MJu" eventType="touchUpInside" id="OG2-BT-qKf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Joa-cp-Pyk" userLabel="Btn Secret Lounge">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Joa-cp-Pyk" userLabel="Btn Secret Lounge">
                                 <rect key="frame" x="40" y="489" width="50" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="mapPin.png"/>
