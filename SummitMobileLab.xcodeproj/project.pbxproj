@@ -39,7 +39,6 @@
 		F0AA2F461C8770E200543B4E /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F451C8770E200543B4E /* loginBackground.png */; };
 		F0AA2F481C878BE500543B4E /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F471C878BE500543B4E /* check.png */; };
 		F0AA2F4A1C8793A500543B4E /* segway.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AA2F491C8793A500543B4E /* segway.png */; };
-		F0BA08C91E6E2D2700F6E245 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0BA08C71E68E36600F6E245 /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0BA08C91E6E2D2700F6E245 /* iAd.framework in Frameworks */,
 				F0AA2F441C87599C00543B4E /* CoreLocation.framework in Frameworks */,
 				F0185C091C79194E0075D75B /* libsqlite3.0.tbd in Frameworks */,
 				F0185C071C7919460075D75B /* SystemConfiguration.framework in Frameworks */,
@@ -264,7 +262,6 @@
 				TargetAttributes = {
 					F08D1AB41C77BB39002DA036 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = U7WJX8Z527;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -447,7 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U7WJX8Z527;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SummitMobileLab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -464,7 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U7WJX8Z527;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SummitMobileLab/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

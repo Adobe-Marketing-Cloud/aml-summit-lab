@@ -8,11 +8,11 @@
 		<key>image</key>
 		<string>piggyback.png</string>
 		<key>description</key>
-		<string>The &quot;piggyback&quot; is one of the oldest forms of transporation.  Enjoy a guided tour on one of the mobile team&apos;s finest stallions.</string>
+		<string>The &quot;piggyback&quot; is one of the oldest forms of transporation.  Enjoy a guided tour on one of the Adobe&apos;s finest stallions.</string>
 		<key>costPerUnitTraveled</key>
 		<real>0.15</real>
 		<key>name</key>
-		<string>Dustin</string>
+		<string>Nate Price</string>
 	</dict>
 	<dict>
 		<key>duration</key>

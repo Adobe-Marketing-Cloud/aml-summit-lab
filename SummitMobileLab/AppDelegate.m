@@ -32,6 +32,9 @@ written permission of Adobe.
 
 #pragma mark - UIApplicationDelegate methods
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
+	
+	
 	/* Adobe Analytics
 	 *
 	 * 1. turn debug logging on so we can see activity in the Xcode console
@@ -40,21 +43,10 @@ written permission of Adobe.
 	[ADBMobile setDebugLogging:YES];
 	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
 	
-	// get IDFA from Apple and pass it to Adobe SDK
-	NSString *idfaString = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-	[ADBMobile setAdvertisingIdentifier:idfaString];
-	
 	/*
 		Register for the Adobe Data Callback
 	 */
-	[ADBMobile registerAdobeDataCallback:^(ADBMobileDataEvent event, NSDictionary * _Nullable adobeData) {
-		if (event == ADBMobileDataEventAcquisitionLaunch) {
-			_acquisitionData = adobeData;
-		}
-		else if (event == ADBMobileDataEventDeepLink) {
-			[self application:application openURL:adobeData[ADBConfigKeyCallbackDeepLink] options:launchOptions];
-		}
-	}];
+	
 	
 	// initialize our fake data for the app
     [self loadDestinations];
@@ -65,20 +57,6 @@ written permission of Adobe.
 
 #pragma mark - Deep linking
 - (BOOL) application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
-    if ([[url scheme] isEqualToString:@"com.adobe.summitlab"]) {
-		/* Adobe Analytics
-		 *
-		 * 1. track the deep link used as an entry point to the app
-		 */
-        [ADBMobile trackAdobeDeepLink:url];
-				
-        _hasSpecialOffer = YES;
-		
-		[(ProfileViewController *)self.window.rootViewController performSegueWithIdentifier:@"loginToMap" sender:@"deeplink"];
-		
-        return YES;
-    }
-    
     return NO;
 }
 
