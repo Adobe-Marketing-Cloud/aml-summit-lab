@@ -104,7 +104,11 @@ written permission of Adobe.
 		 * 1. when the user opens your app by clicking through your push message, report it to the Adobe SDK
 		 */
 		[ADBMobile trackPushMessageClickThrough:userInfo];
-        [self customizeUsingPushData:userInfo];
+        /*
+         * Handle custom payload
+         */
+        UIColor *customColor = [self extractColorFromData:userInfo];
+        [self customizeUsingPushData:customColor];
 	}
 }
 
@@ -118,27 +122,40 @@ written permission of Adobe.
 		 * 1. when the user opens your app by clicking through your push message, report it to the Adobe SDK
 		 */
 		[ADBMobile trackPushMessageClickThrough:userInfo];
-        [self customizeUsingPushData:userInfo];
+        
+        /*
+         * Handle custom payload
+         */
+        UIColor *customColor = [self extractColorFromData:userInfo];
+        [self customizeUsingPushData:customColor];
 	}
 	completionHandler(UIBackgroundFetchResultNoData);
 }
 
-- (void)customizeUsingPushData:(NSDictionary *)data{
-    NSString *customColorString = [data objectForKey:@"color"];
+- (void)customizeUsingPushData:(UIColor *)customColor{
     
-    if (customColorString != nil && customColorString.length > 0){
-        UIViewController *mainViewController = self.window.rootViewController;
-        if ([mainViewController isKindOfClass:[ProfileViewController class]]){
-            ProfileViewController *profileViewController = (ProfileViewController *)mainViewController;
-            
-            NSDictionary *allColors = TEXT_COLOR_NAMES;
-            UIColor *customColor = allColors[customColorString];
-            if (customColor != nil){
-                profileViewController.txtName.textColor = customColor;
-                profileViewController.txtCreditCard.textColor = customColor;
-            }
-        }
+    if (!customColor){
+        return;
     }
+    
+    UIViewController *mainViewController = self.window.rootViewController;
+    if ([mainViewController isKindOfClass:[ProfileViewController class]]){
+        ProfileViewController *profileViewController = (ProfileViewController *)mainViewController;
+        profileViewController.txtName.textColor = customColor;
+        profileViewController.txtCreditCard.textColor = customColor;
+    }
+}
+
+- (UIColor *)extractColorFromData:(NSDictionary *)data{
+    UIColor *customColor = nil;
+    NSString *customColorString = [data objectForKey:@"color"];
+ 
+    if (customColorString != nil && customColorString.length > 0){
+        NSDictionary *allColors = TEXT_COLOR_NAMES;
+        customColor = allColors[customColorString];
+    }
+    
+    return customColor;
 }
 
 #pragma mark - Class methods
