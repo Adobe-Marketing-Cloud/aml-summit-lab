@@ -88,7 +88,10 @@ written permission of Adobe.
 }
 
 - (void) checkForSecretOffer:(NSNotification *)notification {
-
+	// only show secret lounge if they opened from a deeplink
+//	[_btnSecretLounge setHidden:![AppDelegate hasSpecialOffer]];
+// 
+//	[self updateDestinationLabelWithExistingDestination];
 }
 
 #pragma mark - Navigation methods

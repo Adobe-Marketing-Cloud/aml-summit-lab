@@ -7,6 +7,10 @@
     "clientCode": "",
     "timeout": 5
   },
+  "acquisition": {
+    "server": "c00.adobe.com",
+    "appid": "799752ef587558a90ba136ab1766b226f0fd535a35124c3def885dc560ab931e"
+  },
   "audienceManager": {
     "server": "",
     "analyticsForwardingEnabled": false,
@@ -23,7 +27,7 @@
     "batchLimit": 0,
     "timezone": "MST",
     "timezoneOffset": -420,
-    "referrerTimeout": 0,
+    "referrerTimeout": 5,
     "backdateSessionInfo": false,
     "poi": []
   },

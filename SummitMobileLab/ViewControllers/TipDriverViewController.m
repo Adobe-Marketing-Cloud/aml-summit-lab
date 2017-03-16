@@ -29,6 +29,13 @@ written permission of Adobe.
 	 * 1. track the user viewing this page
 	 * 2. track the location of the user after they arrive
 	 */
+	/*
+	NSDictionary *contextData = @{
+								  @"trip.destination":_user.trip.destination.name,
+								  @"acquisitionCampaign":[[AppDelegate acquisitionData] objectForKey:@"a.referrer.campaign.name"]
+								  };
+	[ADBMobile trackState:@"Tip Driver" data:contextData];
+	*/
 	[ADBMobile trackState:@"Tip Driver" data:nil];
 	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
 	
@@ -57,7 +64,7 @@ written permission of Adobe.
 	_lblCost.text = [NSString stringWithFormat:@"$%.2f", [_user.trip.distance floatValue] * [_user.trip.tranportationMode.costPerUnitTraveled floatValue]];
 	_lblTripCompletion.text = [NSString stringWithFormat:@"Thank you for choosing us for your travel needs, %@.  Services will be charged to your credit card (%@).  Would you like to tip your driver?",
 							   _user.name, _user.creditCard];
-	
+//	_btnBeardcons.hidden = ![_user.trip.destination.name isEqualToString:@"Casino"];
 }
 
 - (void) setupTipControl {
@@ -99,7 +106,11 @@ written permission of Adobe.
 }
 
 - (IBAction) linkToBeardcons:(id)sender {
-	
+//	[ADBMobile acquisitionCampaignStartForApp:@"799752ef587558a90ba136ab1766b226f0fd535a35124c3def885dc560ab931e" data:nil];
+//	
+//	[[UIApplication sharedApplication]
+//		openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/bea-rd-cons/id835196493?mt=8&uo=4"]
+//		options:@{} completionHandler:nil];
 }
 
 @end
