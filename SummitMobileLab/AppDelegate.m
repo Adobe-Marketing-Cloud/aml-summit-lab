@@ -15,7 +15,7 @@ written permission of Adobe.
 #import "TransportationMode.h"
 #import "Destination.h"
 #import "ProfileViewController.h"
-#import "ADBMobile.h"
+//#import "ADBMobile.h"
 
 #define RED_COLOR  [UIColor colorWithRed: 1 green: 0 blue: 0 alpha: 1.0]
 #define BLUE_COLOR  [UIColor colorWithRed: 0 green: 0 blue: 1 alpha: 1.0]
@@ -33,29 +33,33 @@ written permission of Adobe.
 
 #pragma mark - UIApplicationDelegate methods
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	
-    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-        UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        [application registerUserNotificationSettings:settings];
+    
+     // [push message] Register app for push notifications of sound/ badge/ alert type.
+     
+     /*   if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+            UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound;
+            UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+            [application registerUserNotificationSettings:settings];
+            [application registerForRemoteNotifications];
+        }
+     
         [application registerForRemoteNotifications];
-    }
-    [application registerForRemoteNotifications];
+     */
     
-    /* Adobe Analytics
-	 *
-	 * 1. turn debug logging on so we can see activity in the Xcode console
-	 * 2. collect lifecycle data with additional data reporting the year
-	 */
+    /* // [in app message] Enable the collection of Lifecycle data.
+
+        // 1. turn debug logging on so we can see activity in the Xcode console
+        [ADBMobile setDebugLogging:YES];
+
+        // 2. collect lifecycle data with additional data reporting the year
+        [ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
     
-	[ADBMobile setDebugLogging:YES];
-	[ADBMobile collectLifecycleDataWithAdditionalData:@{@"summit.year":@"2017"}];
-    NSDictionary *contextData = @{@"testName":@"Summit Lab 2017", @"testMessage":@"AMS postbacks are sweet!"};
-    [ADBMobile trackAction:@"demo-postbacks" data:contextData];
-	
-	// initialize our fake data for the app
+    */
+    
+    
+    // initialize our fake data for the app
     [self loadDestinations];
-    [self loadTransportationModes];    
+    [self loadTransportationModes];
     
     return YES;
 }
@@ -83,7 +87,7 @@ written permission of Adobe.
 	 *
 	 * 1. pass the push token for this device to the Adobe SDK
 	 */    
-	[ADBMobile setPushIdentifier:deviceToken];
+	// [ADBMobile setPushIdentifier:deviceToken];
 }
 
 - (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -92,7 +96,7 @@ written permission of Adobe.
 	 * (optional)
 	 * 1. set the push token to nil for this device (this helps keep the estimated audience more accurate)
 	 */
-	[ADBMobile setPushIdentifier:nil];
+	// [ADBMobile setPushIdentifier:nil];
 }
 
 // app target < iOS 7
@@ -103,12 +107,13 @@ written permission of Adobe.
 		 *
 		 * 1. when the user opens your app by clicking through your push message, report it to the Adobe SDK
 		 */
-		[ADBMobile trackPushMessageClickThrough:userInfo];
+		//[ADBMobile trackPushMessageClickThrough:userInfo];
+        
         /*
          * Handle custom payload
          */
-        UIColor *customColor = [self extractColorFromData:userInfo];
-        [self customizeUsingPushData:customColor];
+        // UIColor *customColor = [self extractColorFromData:userInfo];
+        // [self customizeUsingPushData:customColor];
 	}
 }
 
@@ -121,13 +126,13 @@ written permission of Adobe.
 		 *
 		 * 1. when the user opens your app by clicking through your push message, report it to the Adobe SDK
 		 */
-		[ADBMobile trackPushMessageClickThrough:userInfo];
+		// [ADBMobile trackPushMessageClickThrough:userInfo];
         
         /*
          * Handle custom payload
          */
-        UIColor *customColor = [self extractColorFromData:userInfo];
-        [self customizeUsingPushData:customColor];
+        //UIColor *customColor = [self extractColorFromData:userInfo];
+        // [self customizeUsingPushData:customColor];
 	}
 	completionHandler(UIBackgroundFetchResultNoData);
 }

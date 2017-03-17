@@ -17,20 +17,21 @@ written permission of Adobe.
 #import "User.h"
 #import "Destination.h"
 #import "TransportationMode.h"
-#import "ADBMobile.h"
+//#import "ADBMobile.h"
 
 @implementation TipDriverViewController
 
 #pragma mark - UIViewController methods
 - (void) viewWillAppear:(BOOL)animated {
-	/* Adobe Analytics
-	 *
+    /*
 	 * 1. track the user viewing this page
-	 * 2. track the location of the user after they arrive
 	 */
-	[ADBMobile trackState:@"Tip Driver" data:nil];
-	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
-	
+    //[ADBMobile trackState:@"Tip Driver" data:nil];
+
+    /*
+     * 2. track the location of the user after they arrive
+     */
+    //[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
 	
 	// update the labels in our UI
 	[self updateTextForLabels];
@@ -48,7 +49,7 @@ written permission of Adobe.
 	 *
 	 * 1. track the tip amount selected by the user
 	 */
-	[ADBMobile trackAction:@"SetTipAmount" data:@{@"tipAmount":tipAmount}];
+	//[ADBMobile trackAction:@"SetTipAmount" data:@{@"tipAmount":tipAmount}];
 }
 
 - (void) updateTextForLabels {
@@ -91,9 +92,7 @@ written permission of Adobe.
 	tripData[@"trip.origin"] = _user.trip.currentLocation.name;
 	tripData[@"trip.destination"] = _user.trip.destination.name;
 	tripData[@"trip.transportationMode"] = _user.trip.tranportationMode.name;
-	tripData[@"trip.tipAmount"] = [_segmentTip titleForSegmentAtIndex:_segmentTip.selectedSegmentIndex];
-	
-	[ADBMobile trackAction:@"Trip Complete" data:tripData];
+	tripData[@"trip.tipAmount"] = [_segmentTip titleForSegmentAtIndex:_segmentTip.selectedSegmentIndex];	
 }
 
 @end
