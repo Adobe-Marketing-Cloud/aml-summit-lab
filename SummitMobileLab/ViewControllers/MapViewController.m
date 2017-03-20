@@ -35,8 +35,8 @@ written permission of Adobe.
 
 #pragma mark - UI Helper methods
 - (void) setupMapPins {
-    [self setButtonState:_btnLab329 enabled:![_user.trip.currentLocation.name isEqualToString:@"Lab 3881"]];
-    [self setButtonState:_btnLab330 enabled:![_user.trip.currentLocation.name isEqualToString:@"Lab 3882"]];
+    [self setButtonState:_btnLab3881 enabled:![_user.trip.currentLocation.name isEqualToString:@"Lab 3881"]];
+    [self setButtonState:_btnLab3882 enabled:![_user.trip.currentLocation.name isEqualToString:@"Lab 3882"]];
     [self setButtonState:_btnRestrooms enabled:![_user.trip.currentLocation.name isEqualToString:@"Restrooms"]];
     [self setButtonState:_btnCasino enabled:![_user.trip.currentLocation.name isEqualToString:@"Casino"]];
     [self setButtonState:_btnBar enabled:![_user.trip.currentLocation.name isEqualToString:@"Bar"]];
@@ -50,11 +50,11 @@ written permission of Adobe.
 - (IBAction) setDestination:(id)sender {
     UIButton *button = (UIButton *)sender;
     
-    if (button == _btnLab329) {
+    if (button == _btnLab3881) {
         _user.trip.destination = [AppDelegate destinations][@"Lab 3881"];
         _lblDestination.text = @"Take me to Lab 3881";
     }
-    else if (button == _btnLab330) {
+    else if (button == _btnLab3882) {
         _user.trip.destination = [AppDelegate destinations][@"Lab 3882"];
         _lblDestination.text = @"Take me to Lab 3882";
     }

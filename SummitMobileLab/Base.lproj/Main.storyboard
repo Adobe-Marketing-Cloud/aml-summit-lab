@@ -311,8 +311,8 @@ before beginning your trip!</string>
                     <connections>
                         <outlet property="btnBar" destination="O0Z-jW-ILA" id="kKa-zw-Fg7"/>
                         <outlet property="btnCasino" destination="3Gg-IJ-bI8" id="iYN-TR-K3J"/>
-                        <outlet property="btnLab329" destination="XQh-kP-ijC" id="WXg-3g-6xh"/>
-                        <outlet property="btnLab330" destination="uBu-d2-8Fi" id="p5B-gE-SrM"/>
+                        <outlet property="btnLab3881" destination="XQh-kP-ijC" id="mfa-ci-FI0"/>
+                        <outlet property="btnLab3882" destination="uBu-d2-8Fi" id="ocR-jE-UzM"/>
                         <outlet property="btnRestrooms" destination="LeL-S3-4db" id="kcJ-E1-tcP"/>
                         <outlet property="lblDestination" destination="TEc-Gw-dqF" id="4Mc-yc-W8t"/>
                     </connections>
