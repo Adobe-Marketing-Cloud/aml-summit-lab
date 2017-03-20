@@ -77,11 +77,13 @@ written permission of Adobe.
     TipDriverViewController *tipVC = [segue destinationViewController];
     tipVC.user = _user;
 	
-	/* Adobe Analytics
-	 *
-	 * 1. track the selection of the transportation mode
-	 */
-	[ADBMobile trackAction:@"TransportationSelect" data:@{@"trip.transportationMode":_user.trip.tranportationMode.name}];
+    if (_user.trip.tranportationMode){
+        /* Adobe Analytics
+         *
+         * 1. track the selection of the transportation mode
+         */
+        [ADBMobile trackAction:@"TransportationSelect" data:@{@"trip.transportationMode":_user.trip.tranportationMode.name}];
+    }
 }
 
 @end
