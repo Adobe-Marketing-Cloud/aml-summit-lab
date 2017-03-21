@@ -29,13 +29,13 @@ written permission of Adobe.
 	 * 1. track the user viewing this page
 	 * 2. track the location of the user after they arrive
 	 */
-	/*
-	NSDictionary *contextData = @{
-								  @"trip.destination":_user.trip.destination.name,
-								  @"acquisitionCampaign":[[AppDelegate acquisitionData] objectForKey:@"a.referrer.campaign.name"]
-								  };
-	[ADBMobile trackState:@"Tip Driver" data:contextData];
-	*/
+	
+//	NSDictionary *contextData = @{
+//								  @"trip.destination":_user.trip.destination.name,
+//								  @"acquisitionCampaign":[[AppDelegate acquisitionData] objectForKey:@"a.referrer.campaign.name"]
+//								  };
+//	[ADBMobile trackState:@"Tip Driver" data:contextData];
+	
 	[ADBMobile trackState:@"Tip Driver" data:nil];
 	[ADBMobile trackLocation:_user.trip.destination.location data:@{@"summit.year":@"2017"}];
 	
