@@ -9,8 +9,15 @@
 			-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; }
 		a { text-decoration:none; }
 		img { display:none; }
-		.button-large { display:block;margin-left:auto;margin-right:auto;margin-top:30px; }		
-		.button-container { position:absolute;bottom:0px;right:0px;left:0px;display:block;background-color:#FFF;height:200px; }
+		.button-large { 
+			max-width: calc(50% - 20px);
+			display:inline-block;margin-left:auto;margin-right:auto;
+			margin-top:20px; 
+		}		
+		.button-container { 
+			position:absolute;bottom:0px;right:0px;left:0px;
+			display:block;background-color:#FFF;height:100px; 
+		}
 
 
 .pageStyles {
@@ -25,7 +32,8 @@
 .imageBar {
   background-color: white;
   width: 100%;
-  padding: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .imageWrapper {
@@ -44,12 +52,12 @@
 }
 
 .imageBox {
+	margin: 5px;
   width: calc(25% - 20px);  
   display: inline-block;
 }
 
 .imageStyle {
-  padding: 10px;
   width: 100%;
   display: block;
 }
@@ -65,9 +73,12 @@
   transform: translateX(-50%);
 }
 
-@media (min-width:620px) {
-	.button-container { display:block;height:120px; }
-	.button-large { display: inline-block; }
+@media (max-width:620px) and (orientation:portrait) {
+	.button-container { display:block;height:180px; }
+	.button-large { 
+		display: block;
+		max-width: calc(100% - 20px);
+	}
 }
 
 .downloadNow {
@@ -100,7 +111,7 @@
 </head>
 <body>
   <div class='pageStyles'>
-    <div class='title'>Summit Mobile Transportation Co.</div>
+    <div class='title'>Try a hoverboard today!</div>
     <div class='imageBar'>
       <div class='imageWrapper'>
         <div class='imageBox'>
@@ -118,7 +129,7 @@
       </div>
     </div>
     <div class='testamonial'>
-      Try a hoverboard today!
+      Summit Mobile Transportation Co.
     </div>
   </div>
 <div class="button-container">
